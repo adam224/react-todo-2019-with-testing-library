@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import ToDoItem from "./ToDoItem";
 
-describe("<ToDoItem/>", () => {
+describe.skip("<ToDoItem/>", () => {
   const item = { text: "Clean the pot" };
   it("Renders without crashing", () => {
     const toDoItem = render(<ToDoItem item={item} />);

@@ -40,16 +40,15 @@ const ToDo = () => {
     <div className="ToDo">
       <img className="Logo" src={ReactLogo} alt="logo" />
       <img className="Logo" src={TestingLibraryLogo} alt="logo" />
-      <h1 data-testid="header" className="ToDo-Header">
+      <h1 data-testid="header" className="ToDo-Header" role="heading">
         React To Do
       </h1>
-      <h3 className="ToDo-Subheader">tested with Testing Library</h3>
       <div className="ToDo-Container">
-        <div className="ToDo-Content">
+        <ul className="ToDo-Content">
           {list.map((item) => {
             return <ToDoItem key={item.id} item={item} deleteItem={deleteItem} />;
           })}
-        </div>
+        </ul>
 
         <div className="ToDoInput">
           <input
@@ -59,7 +58,7 @@ const ToDo = () => {
             onChange={handleInput}
             onKeyPress={handleKeyPress}
           />
-          <button data-testid="add" className="ToDo-Add" onClick={createNewToDoItem}>
+          <button aria-label="add" data-testid="add" className="ToDo-Add" onClick={createNewToDoItem}>
             +
           </button>
         </div>
